@@ -29,8 +29,8 @@
 - JDK 없을 경우: + 버튼으로 OpenJDK 21 다운로드
 
 ## ▶️ 4. Kotlin 프로그램 실행
+### HelloKotlin 예제
 ```kotlin
-HelloKotlin 예제
 fun main() {
     println("hello kotlin")
 }
