@@ -425,7 +425,7 @@ Duration between = Duration.between(start, end); //차이: 3600초
 
 
 ### 🧬 클래스 구조도
-#### `Temporal 인터페이스`
+### `Temporal 인터페이스`
 ```mermaid
 classDiagram
   class TemporalAccessor
@@ -447,7 +447,7 @@ classDiagram
 ```
   
   
-#### `시간의 단위`
+### 시간의 단위
 ```mermaid
 classDiagram
   class TemporalUnit
