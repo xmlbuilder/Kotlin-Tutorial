@@ -443,7 +443,9 @@ classDiagram
 
   TemporalAmount <|-- Period
   TemporalAmount <|-- Duration
+```
 
+```mermaid
 classDiagram
   class TemporalUnit
   class ChronoUnit
