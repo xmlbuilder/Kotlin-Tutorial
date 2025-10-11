@@ -445,6 +445,9 @@ classDiagram
   TemporalAmount <|-- Period
   TemporalAmount <|-- Duration
 ```
+
+
+  
 #### 시간의 단위
 ```mermaid
 classDiagram
