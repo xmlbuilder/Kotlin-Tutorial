@@ -1,0 +1,117 @@
+# 🧬 Kotlin에서의 생성자
+## 1️⃣ 생성자가 필요한 이유
+Kotlin에서도 객체를 생성할 때 초기값을 설정하고 싶다면 **생성자(constructor)** 를 사용합니다.
+자바처럼 init() 메서드나 외부 초기화 함수 없이, 생성자 자체에 초기화 로직을 담는 것이 일반적입니다.
+
+## 2️⃣ 초기 코드 (Java → Kotlin 변환)
+### ❌ 자바 방식: 직접 설정
+```java
+MemberInit member1 = new MemberInit();
+member1.name = "user1";
+member1.age = 15;
+member1.grade = 90;
+```
+
+## ✅ Kotlin 방식: 생성자 사용
+```kotlin
+class MemberInit(val name: String, val age: Int, val grade: Int)
+val member1 = MemberInit("user1", 15, 90)
+```
+- 생성자에서 바로 초기화
+- 코드 간결, 중복 제거
+
+## 3️⃣ 생성자와 초기화 메서드 비교
+| 방식               | 코드 예시                        | 설명                                               | 객체 지향 관점 |
+|--------------------|----------------------------------|----------------------------------------------------|----------------|
+| 직접 설정          | `member.name = "user1"`          | 객체 생성 후 프로퍼티를 하나씩 수동 설정            | ❌ 낮음         |
+| 외부 함수 사용      | `initMember(member, ...)`        | 외부 함수로 초기화, 중복 제거되지만 응집도 낮음     | ⚠️ 중간         |
+| 내부 메서드 사용    | `fun init(...)`                  | 클래스 내부에서 초기화 메서드 제공, 응집도 향상     | ✅ 높음         |
+| 생성자 사용         | `Member("user1", 15, 90)`        | 생성자에서 바로 초기화, 가장 간결하고 안전한 방식   | ✅ 매우 높음     |
+
+
+
+## 4️⃣ Kotlin의 생성자 문법
+### 기본 생성자
+```kotlin
+class Member(val name: String, val age: Int, val grade: Int)
+```
+
+- 클래스 선언과 동시에 생성자 정의
+- val 또는 var로 프로퍼티 선언 가능
+
+### 보조 생성자 (constructor)
+```kotlin
+class Member {
+    var name: String
+    var age: Int
+    var grade: Int
+
+    constructor(name: String, age: Int, grade: Int) {
+        this.name = name
+        this.age = age
+        this.grade = grade
+    }
+}
+```
+
+- 자바 스타일 생성자도 가능하지만 Kotlin에서는 잘 사용하지 않음
+- 대신 init 블록이나 기본 생성자 + default parameter를 선호
+
+### init 블록
+```kotlin
+class Member(val name: String, val age: Int, val grade: Int) {
+    init {
+        println("생성자 호출: name=$name, age=$age, grade=$grade")
+    }
+}
+```
+
+- 생성자 호출 시 자동 실행되는 초기화 블록
+- 로깅이나 유효성 검사에 사용
+
+## 5️⃣ 생성자 오버로딩 → Kotlin 방식
+자바에서는 생성자 오버로딩과 this()를 사용하지만, Kotlin에서는 **기본값(default parameter)** 으로 처리합니다.
+### 자바 방식
+```java
+public Book(String title, String author) {
+    this(title, author, 0);
+}
+```
+
+### Kotlin 방식
+```kotlin
+class Book(
+    val title: String = "",
+    val author: String = "",
+    val page: Int = 0
+)
+```
+
+- 기본값을 지정하면 다양한 방식으로 객체 생성 가능
+```kotlin
+val book1 = Book() // 기본값 사용
+val book2 = Book("인셉션", "놀란") // 페이지는 0
+val book3 = Book("인셉션", "놀란", 300)
+```
+
+
+## 6️⃣ 정보 출력 메서드
+```kotlin
+fun Book.displayInfo() {
+    println("제목: $title, 저자: $author, 페이지: $page")
+}
+```
+
+- Kotlin에서는 확장 함수로도 정의 가능
+
+## 📥 정리: Kotlin 생성자 핵심 요약
+| 항목             | 문법/키워드           | 설명                                               |
+|------------------|------------------------|----------------------------------------------------|
+| 주 생성자 정의     | `class A(...)`         | 클래스 선언과 동시에 생성자 정의 가능               |
+| 프로퍼티 선언      | `val` / `var`          | 생성자 매개변수에 직접 프로퍼티 선언 가능           |
+| 초기화 블록        | `init { ... }`         | 생성자 호출 시 자동 실행되는 블록                   |
+| 정보 출력 메서드   | `fun displayInfo()`     | 클래스 내부 또는 확장 함수로 정의 가능              |
+| 기본값 처리        | `param: Type = default`| 생성자 오버로딩 없이 다양한 초기화 방식 제공         |
+
+---
+
