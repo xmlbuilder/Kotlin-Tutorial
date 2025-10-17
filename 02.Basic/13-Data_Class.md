@@ -19,14 +19,14 @@ data 키워드를 붙이면 코틀린이 다음 메서드들을 자동으로 생
 ```kotlin
 class User(val id: String, val name: String)
 ```
-- equals(), toString() 등은 자동 생성되지 않음
+- `equals()`, `toString()` 등은 자동 생성되지 않음
 - 비교나 출력 시 직접 오버라이딩 필요
 
 ## 데이터 클래스
 ```kotlin
 data class User(val id: String, val name: String)
 ```
-- equals(), hashCode(), toString(), copy() 자동 생성
+- `equals()`, `hashCode()`, `toString()`, `copy()` 자동 생성
 - 데이터 중심 로직에 매우 유용
   
 
