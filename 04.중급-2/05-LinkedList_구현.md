@@ -364,8 +364,8 @@ graph TD
 ```
 
 ### 첫 번째 노드 "d" 삭제
-graph TD
 ```mermaid
+graph TD
     subgraph Before Remove
         D[Node d] --> A[Node a]
         A --> B[Node b]
