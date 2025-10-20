@@ -31,7 +31,7 @@ class Node(var item: Any) {
 
 
 ## 🧪 사용 예시
-```kotline
+```kotlin
 fun main() {
     val first = Node("A")
     first.next = Node("B")
@@ -46,7 +46,6 @@ fun main() {
     println("전체 구조: $first") // 출력: [A->B->C]
 }
 ```
-
 
 ### 🖨️ 출력 결과
 ```
