@@ -1,5 +1,5 @@
 # Lambda Expression
-아래는 Java 기반 람다 표현식 예제를 Kotlin 스타일로 완전히 변환한 버전입니다.
+아래는 Java 기반 람다 표현식 예제를 Kotlin 스타일로 완전히 변환한 버전입니다.  
 클래스 구조, 정렬, 반복, 스레드 생성까지 모두 코틀린답게 간결하고 직관적으로 바꿨습니다.
 
 ## 📦 Kotlin Lambda Expression Sample
