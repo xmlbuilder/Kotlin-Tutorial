@@ -5,7 +5,7 @@ Kotlin의 `*` spread operator와 vararg 사용 방식에 맞춰 재작성했습�
 
 ## Spread Operator
 Kotlin에서는 JavaScript처럼 명시적인 spread operator `*` 를 지원하며,
-vararg와 함께 배열을 개별 인자로 전달할 수 있습니다.
+`vararg` 와 함께 배열을 개별 인자로 전달할 수 있습니다.
 
 ## 🧠 Kotlin에서의 "스프레드" 개념
 Kotlin은 `vararg`와 `*` spread operator를 통해 배열을 함수 인자로 펼치는 기능을 명시적으로 제공합니다.
