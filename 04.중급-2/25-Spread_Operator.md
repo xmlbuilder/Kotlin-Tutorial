@@ -1,7 +1,7 @@
 # Spread Operator
 
 아래는 기존 Java 중심 설명을 Kotlin 문법과 관점으로 바꾼 문서입니다.  
-Kotlin의 * spread operator와 vararg 사용 방식에 맞춰 재작성했습니다.
+Kotlin의 `*` spread operator와 vararg 사용 방식에 맞춰 재작성했습니다.
 
 ## Spread Operator
 Kotlin에서는 JavaScript처럼 명시적인 spread operator `*` 를 지원하며,
